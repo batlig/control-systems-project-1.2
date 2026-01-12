@@ -34,10 +34,10 @@ MCH 3008 Control Systems - Project 1.2 complete solutions with MATLAB code and s
 | 8.2 | Nyquist Diagram (Unstable) | ✅ Done |
 | 9.1 | Nyquist Stability | ⏳ Pending |
 | 9.2 | Nyquist Stability | ⏳ Pending |
-| 10.1 | Pole Placement | ⏳ Pending |
-| 10.2 | Pole Placement | ⏳ Pending |
+| 10.1 | Pole Placement (Partial) | ✅ Done |
+| 10.2 | Pole Placement (Full) | ✅ Done |
 
-**Progress: 6/12 (50%)**
+**Progress: 8/12 (67%)**
 
 ## 📂 Each Folder Contains
 
@@ -65,5 +65,7 @@ MCH 3008 Control Systems - Project 1.2 complete solutions with MATLAB code and s
 | 5.2 | L(s) with pole at s=+1 | Cannot be stabilized |
 | 6.1 | Lead-Lag Controller | C(s) = 45(s+5)(s+0.5)/[(s+15)(s+0.005)] |
 | 6.2 | Lag Compensator | C(s) = 3.96(s+2)/(s+0.091) |
-| 8.1 | Nyquist | Closed-loop STABLE |
-| 8.2 | Nyquist | Closed-loop UNSTABLE |
+| 8.1 | Nyquist | Closed-loop **STABLE** |
+| 8.2 | Nyquist | Closed-loop **UNSTABLE** |
+| 10.1 | Pole Placement | -1,-1: YES / -2,-2: NO |
+| 10.2 | Pole Placement | -5,-5: YES / -10,-10: YES |
