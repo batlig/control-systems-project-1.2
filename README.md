@@ -2,38 +2,55 @@
 
 MCH 3008 Control Systems - Project 1.2 complete solutions with MATLAB code and step-by-step explanations.
 
-## Questions Covered
+## 📁 Project Structure
 
-| Question | Topic | Files |
-|----------|-------|-------|
-| 5.1 | Root Locus | `question5_1.m`, `question5_1_solution.md` |
-| 5.2 | Root Locus (Unstable Plant) | Coming soon |
-| 6.1 | Lead-Lag Controller Design | `question6_1.m`, `question6_1_solution.md` |
-| 6.2 | Lag Compensator Design | Coming soon |
-| 7.1 | State-Space Control | Coming soon |
-| 7.2 | Mass-Spring-Damper System | Coming soon |
-| 8.1 | Nyquist Diagram | Coming soon |
-| 8.2 | Nyquist Diagram | Coming soon |
-| 9.1 | Nyquist Stability | Coming soon |
-| 9.2 | Nyquist Stability | Coming soon |
-| 10.1 | Pole Placement | Coming soon |
-| 10.2 | Pole Placement | Coming soon |
+```
+├── Q5.1/          # Root Locus
+├── Q5.2/          # Root Locus (Unstable Plant)
+├── Q6.1/          # Lead-Lag Controller Design
+├── Q6.2/          # Lag Compensator Design
+├── Q7.1/          # State-Space Control (3rd order)
+├── Q7.2/          # Mass-Spring-Damper System
+├── Q8.1/          # Nyquist Diagram
+├── Q8.2/          # Nyquist Diagram
+├── Q9.1/          # Nyquist Stability Analysis
+├── Q9.2/          # Nyquist Stability Analysis
+├── Q10.1/         # Pole Placement
+├── Q10.2/         # Pole Placement
+└── project1.2.pdf # Original assignment
+```
 
-## How to Use
+## ✅ Completed Questions
+
+| Question | Topic | Status |
+|----------|-------|--------|
+| 5.1 | Root Locus | ✅ Done |
+| 5.2 | Root Locus (Unstable Plant) | ⏳ Pending |
+| 6.1 | Lead-Lag Controller Design | ✅ Done |
+| 6.2 | Lag Compensator Design | ✅ Done |
+| 7.1 | State-Space Control | ⏳ Pending |
+| 7.2 | Mass-Spring-Damper System | ⏳ Pending |
+| 8.1 | Nyquist Diagram | ⏳ Pending |
+| 8.2 | Nyquist Diagram | ⏳ Pending |
+| 9.1 | Nyquist Stability | ⏳ Pending |
+| 9.2 | Nyquist Stability | ⏳ Pending |
+| 10.1 | Pole Placement | ⏳ Pending |
+| 10.2 | Pole Placement | ⏳ Pending |
+
+## 📂 Each Folder Contains
+
+- `solution.m` - MATLAB code with comments
+- `solution.md` - Detailed step-by-step solution  
+- `solution_short.md` - Concise student-style summary
+
+## 🚀 How to Use
 
 1. Open MATLAB
-2. Navigate to this folder
-3. Run any `question*.m` file
-4. Check corresponding `*_solution.md` for step-by-step explanation
+2. Navigate to any question folder (e.g., `Q5.1/`)
+3. Run the `.m` file
+4. Check the markdown files for explanations
 
-## Solution Files
-
-Each question has:
-- `.m` file - MATLAB code with comments
-- `_solution.md` - Detailed step-by-step solution  
-- `_solution_short.md` - Concise student-style summary
-
-## Requirements
+## 📋 Requirements
 
 - MATLAB R2020a or later
 - Control System Toolbox
