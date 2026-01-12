@@ -1,7 +1,7 @@
 # Question 6.1 - Controller Design (Optimized Solution)
 
 ## Problem Statement
-**Plant:** G(s) = 1/[(s+4)(s+6)]
+$$**Plant:** G(s) = 1/[(s+4)(s+6)]$$
 
 **Specifications:**
 - Rise time: tr < 0.18 s
