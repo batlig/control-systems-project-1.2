@@ -24,20 +24,20 @@ MCH 3008 Control Systems - Project 1.2 complete solutions with MATLAB code and s
 
 | Question | Topic | Status |
 |----------|-------|--------|
-| 5.1 | Root Locus | ✅ Done |
-| 5.2 | Root Locus (Unstable Plant) | ✅ Done |
-| 6.1 | Lead-Lag Controller Design | ✅ Done |
-| 6.2 | Lag Compensator Design | ✅ Done |
-| 7.1 | State-Space Control | ⏳ Pending |
-| 7.2 | Mass-Spring-Damper System | ⏳ Pending |
-| 8.1 | Nyquist Diagram (Stable) | ✅ Done |
-| 8.2 | Nyquist Diagram (Unstable) | ✅ Done |
-| 9.1 | Nyquist Stability | ⏳ Pending |
-| 9.2 | Nyquist Stability | ⏳ Pending |
-| 10.1 | Pole Placement (Partial) | ✅ Done |
-| 10.2 | Pole Placement (Full) | ✅ Done |
+| 5.1 | Root Locus | **VERIFIED ✅** |
+| 5.2 | Root Locus (Unstable Plant) | **VERIFIED ✅** |
+| 6.1 | Lead-Lag Controller Design | **VERIFIED ✅** |
+| 6.2 | Lag Compensator Design | **VERIFIED ✅** |
+| 7.1 | State-Space Control | SKIPPED ⚪ |
+| 7.2 | Mass-Spring-Damper System | SKIPPED ⚪ |
+| 8.1 | Nyquist Diagram (Stable) | **VERIFIED ✅** |
+| 8.2 | Nyquist Diagram (Unstable) | **VERIFIED ✅** |
+| 9.1 | Nyquist Stability | SKIPPED ⚪ |
+| 9.2 | Nyquist Stability | SKIPPED ⚪ |
+| 10.1 | Pole Placement (Partial) | **VERIFIED ✅** |
+| 10.2 | Pole Placement (Full) | **VERIFIED ✅** |
 
-**Progress: 8/12 (67%)**
+**Progress: 8/8 Requested Questions Complete**
 
 ## 📂 Each Folder Contains
 
@@ -63,9 +63,9 @@ MCH 3008 Control Systems - Project 1.2 complete solutions with MATLAB code and s
 | Question | System | Result |
 |----------|--------|--------|
 | 5.2 | L(s) with pole at s=+1 | Cannot be stabilized |
-| 6.1 | Lead-Lag Controller | C(s) = 45(s+5)(s+0.5)/[(s+15)(s+0.005)] |
-| 6.2 | Lag Compensator | C(s) = 3.96(s+2)/(s+0.091) |
+| 6.1 | PI-Lead Controller | C(s) = 225(s+4)(s+6)/[s(s+18)] |
+| 6.2 | Lag Compensator | C(s) = 3.76(s+0.1)/(s+0.0008) |
 | 8.1 | Nyquist | Closed-loop **STABLE** |
 | 8.2 | Nyquist | Closed-loop **UNSTABLE** |
-| 10.1 | Pole Placement | -1,-1: YES / -2,-2: NO |
-| 10.2 | Pole Placement | -5,-5: YES / -10,-10: YES |
+| 10.1 | Pole Placement | -1,-1: **YES** / -2,-2: **NO** |
+| 10.2 | Pole Placement | -5,-5: **YES** / -10,-10: **YES** |

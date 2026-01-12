@@ -1,76 +1,38 @@
-# Question 6.1 - Solution (Short)
+# Question 6.1 Solution (Short)
 
-**G(s) = 1/[(s+4)(s+6)]** | Specs: tr < 0.18s, Mp < 20%, ess < 0.01
+## 1. Design Strategy: Pole-Zero Cancellation
 
----
+The plant is:
+$$G(s) = \frac{1}{(s+4)(s+6)}$$
 
-## Step 1: Desired Poles
-- From Mp < 20%: **ζ ≥ 0.456** → use ζ = 0.5
-- From tr < 0.18s: **ωn > 10** → use ωn = 12 rad/s
-- **Desired poles: s = -6 ± j10.39**
+To strictly meet the specifications ($t_r < 0.18s$, $e_{ss} < 0.01$), we use a **Pole-Zero Cancellation** controller (PI-Lead type). This allows us to shape the loop transfer function exactly into a 2nd order system with desired properties.
 
----
+$$C(s) = K \frac{(s+4)(s+6)}{s(s+p)}$$
 
-## Step 2: Check Kp Requirement
-- ess < 0.01 → **Kp > 99**
-- Plant Kp = 1/24 = 0.042 (way too low!)
-- **Need lag compensator** for steady-state
+This simplifies the open loop to:
+$$L(s) = \frac{K}{s(s+p)}$$
 
----
+## 2. Parameter Calculation
 
-## Step 3: Lead Compensator Design
-Purpose: Meet transient specs (tr, Mp)
+The closed loop characteristic equation is $s^2 + ps + K = 0$.
+We match this to $s^2 + 2\zeta\omega_n s + \omega_n^2 = 0$.
 
-$$C_{lead}(s) = \frac{s + 5}{s + 15}$$
+**1. Determine $\omega_n$ (from rise time):**
+$t_r \approx 1.8/\omega_n < 0.18 \Rightarrow \omega_n > 10$.
+We select **$\omega_n = 15$ rad/s** for margin.
+$$K = \omega_n^2 = 15^2 = \mathbf{225}$$
 
-- Zero at s = -5 (near desired pole real part)
-- Pole at s = -15 (provides phase lead)
+**2. Determine $\zeta$ (from overshoot):**
+$M_p < 20\% \Rightarrow \zeta > 0.45$.
+We select **$\zeta = 0.6$** (which gives $M_p \approx 9.5\%$).
+$$p = 2\zeta\omega_n = 2(0.6)(15) = \mathbf{18}$$
 
----
+## 3. Final Controller
 
-## Step 4: Lag Compensator Design
-Purpose: Meet steady-state spec (ess)
+$$C(s) = \frac{225(s+4)(s+6)}{s(s+18)} = \frac{225s^2 + 2250s + 5400}{s^2 + 18s}$$
 
-$$C_{lag}(s) = \frac{s + 0.5}{s + 0.005}$$
+## 4. Verification
 
-- Lag ratio β = 0.5/0.005 = 100
-- Placed far below ωn to not affect transient
-
----
-
-## Step 5: Find Gain K
-Using magnitude condition at desired pole:
-$$K = \frac{1}{|C(s_d) \cdot G(s_d)|} \approx 45$$
-
----
-
-## Final Controller
-
-$$\boxed{C(s) = 45 \cdot \frac{(s+5)(s+0.5)}{(s+15)(s+0.005)}}$$
-
----
-
-## Verification (MATLAB)
-
-| Spec | Required | Result |
-|------|----------|--------|
-| tr | < 0.18 s | ~0.15 s ✓ |
-| Mp | < 20% | ~16% ✓ |
-| ess | < 0.01 | ~0.001 ✓ |
-
----
-
-## Bode Diagram (Hand Sketch - Part C)
-
-Key frequencies: 0.005, 0.5, 4, 5, 6, 15 rad/s
-
-| ω (rad/s) | Slope Change |
-|-----------|--------------|
-| 0.005 | +20 dB/dec (lag pole) |
-| 0.5 | -20 dB/dec (lag zero) |
-| 4 | -20 dB/dec (plant pole) |
-| 5 | +20 dB/dec (lead zero) |
-| 6 | -20 dB/dec (plant pole) |
-| 15 | -20 dB/dec (lead pole) |
-
-Low-freq gain ≈ 36 dB
+- **Rise Time:** $t_r \approx 0.12s$ (< 0.18s) ✅
+- **Overshoot:** $M_p \approx 9.5\%$ (< 20%) ✅
+- **Steady-State Error:** $e_{ss} = 0$ (due to integrator) (< 0.01) ✅

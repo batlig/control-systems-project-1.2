@@ -71,7 +71,7 @@ end
 %% ========================================================================
 fprintf('=== STEP 3: UNDERSTANDING THE LIMITATION ===\n\n');
 
-fprintf('Even though rank(C) = 2 = n, there is a subtle issue...\n\n');
+fprintf('Even though rank(C) = 1 < n, strict controllability fails...\n\n');
 
 % The controllability matrix
 fprintf('C = [1  1]\n');
@@ -173,7 +173,7 @@ fprintf('QUESTION 10.1 SUMMARY\n');
 fprintf('========================================\n');
 fprintf('System: F = [1,1; 0,-1], G = [1; 0]\n\n');
 fprintf('Open-loop poles: +1 (unstable), -1\n');
-fprintf('Controllability matrix rank = 2 (full rank)\n');
+fprintf('Controllability matrix rank = 1 (NOT full rank)\n');
 fprintf('BUT: pole at -1 is uncontrollable!\n\n');
 fprintf('a) Poles at -1, -1: YES ✓ (K = [2, 0])\n');
 fprintf('b) Poles at -2, -2: NO ✗ (cant move -1 pole)\n');

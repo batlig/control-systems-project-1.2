@@ -176,16 +176,38 @@ fprintf('*** ANSWER B: YES, we CAN place poles at -10, -10 ***\n');
 fprintf('   K = [%.0f, %.0f]\n\n', k1_b, k2_b);
 
 %% ========================================================================
-%% SUMMARY
+%% SUMMARY & DYNAMIC VERIFICATION
 %% ========================================================================
 fprintf('========================================\n');
-fprintf('QUESTION 10.2 SUMMARY\n');
+fprintf('QUESTION 10.2 SUMMARY & VERIFICATION\n');
 fprintf('========================================\n');
-fprintf('System: F = [5,0; 0,10], G = [1; 1]\n\n');
-fprintf('Open-loop poles: +5, +10 (both unstable)\n');
-fprintf('Controllability: det(C) = %d ≠ 0 → FULLY CONTROLLABLE\n\n', det_C);
-fprintf('a) Poles at -5, -5:   YES ✓ (K = [%.0f, %.0f])\n', k1_a, k2_a);
-fprintf('b) Poles at -10, -10: YES ✓ (K = [%.0f, %.0f])\n', k1_b, k2_b);
-fprintf('\nBoth placements possible because system is\n');
-fprintf('fully controllable (rank(C) = n = 2).\n');
+fprintf('System: F = [5,0; 0,10], G = [1; 1]\n');
+if rank(C_matrix) == n
+    fprintf('Controllability: FULLY CONTROLLABLE (Rank = %d)\n\n', rank(C_matrix));
+else
+    fprintf('Controllability: NOT FULLY CONTROLLABLE\n\n');
+end
+
+% Part A Check
+fprintf('a) Poles at -5, -5:\n');
+poles_A = eig(F - G*K_a);
+error_A = norm(sort(poles_A) - sort([-5; -5]));
+if error_A < 1e-4
+    fprintf('   Status: VERIFIED ✅ (Error = %.2e)\n', error_A);
+    fprintf('   K = [%.4f, %.4f]\n', K_a(1), K_a(2));
+else
+    fprintf('   Status: FAILED ❌\n');
+end
+
+% Part B Check
+fprintf('\nb) Poles at -10, -10:\n');
+poles_B = eig(F - G*K_b);
+error_B = norm(sort(poles_B) - sort([-10; -10]));
+if error_B < 1e-4
+    fprintf('   Status: VERIFIED ✅ (Error = %.2e)\n', error_B);
+    fprintf('   K = [%.4f, %.4f]\n', K_b(1), K_b(2));
+else
+    fprintf('   Status: FAILED ❌\n');
+end
+
 fprintf('========================================\n');
