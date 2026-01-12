@@ -1,6 +1,6 @@
 # Question 8.1 - Solution (Short)
 
-**G(s) = (s²+1) / [s(s²+2s+3)]**
+$$**G(s) = (s²+1) / [s(s²+2s+3)]**$$
 
 ---
 
